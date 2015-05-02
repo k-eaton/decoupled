@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/handlebars-v3.0.3.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>DBC Stackoverflow 2.0</title>
+</head>
+<body>
+
+<script id="question" type="text/x-handlebars-template">
+  {{#each questions}}
+    <h3><a href="">{{ title }}</a></h3>
+    <p>{{ content }}</p>
+    <p> {{ q_votes }} </p>
+    <button type="button" id="upvote {{id}}">upvote</button>
+    <button type="button" id="downvote {{id}}">downvote</button>
+  {{/each}}
+</script>
+
+<script id="newQuestion" type="text/x-handlebars-template">
+    <h3><a href="">{{ title }}</a></h3>
+    <p>{{ content }}</p>
+    <p> {{ q_votes }} </p>
+    <button type="button" id="upvote" class="{{id}}">upvote</button>
+    <button type="button" id="downvote" class="{{id}}">downvote</button>
+</script>
+
+<div id="question_list">
+</div>
+
+<form id="new_question">
+  <input type="input" name="title">
+  <input type="input" name="content">
+  <input type="submit" value="Submit your question">
+</form>
+
+</body>
+</html>
